@@ -2,12 +2,11 @@
 	import './styles.css';
 </script>
 
-<main class="p-8">
-	<slot />
-</main>
+<slot />
 
 <style lang="postcss">
 	:global(html) {
+		height: 100vh;
 		color: theme(colors.gray.800);
 	}
 </style>

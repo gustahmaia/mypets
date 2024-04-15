@@ -1,15 +1,15 @@
 <script>
 	/** @type {import('./$types').PageData} */
-	export let data
-	export const bgItemTonality = 300
+	export let data;
+	export const bgItemTonality = 300;
 </script>
 
 <svelte:head>
 	<title>{data.pet?.name}</title>
-	<meta name="description" content="About this pet" />
+	<meta name="description" content="Meus pets {data.pet?.name}" />
 </svelte:head>
 
-<body class={data.pet?.sex === 'f' ? 'bg-pink-100' : 'bg-blue-100'}>
+<body class="h-full {data.pet?.sex === 'f' ? 'bg-pink-100' : 'bg-blue-100'}"> 
 	<header class="p-4 flex flex-col items-center justify-center">
 		<img
 			class="w-32 h-32 rounded-full border-4 border-white shadow-md"
@@ -47,19 +47,16 @@
 		<div
 			class="p-2 m-8 rounded-lg cursor-pointer {data.pet?.sex === 'f'
 				? 'bg-pink-300'
-				: 'bg-blue-300'}"
-		>
+				: 'bg-blue-300'}">
 			<span class="font-bold">reside em:</span>
 			<a class="font-semibold" href="https://maps.google.com/?q={data.pet?.address}"
-				>{data.pet?.address}</a
-			>
+				>{data.pet?.address}</a>
 		</div>
 
 		<div
 			class="p-2 m-8 rounded-lg cursor-pointer {data.pet?.sex === 'f'
 				? 'bg-pink-300'
-				: 'bg-blue-300'}"
-		>
+				: 'bg-blue-300'}">
 			<span class="font-bold">contato:</span>
 			<a class="font-semibold" href="http://wa.me/{data.pet?.contact}">{data.pet?.contactString}</a>
 		</div>
