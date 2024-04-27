@@ -9,8 +9,8 @@
 	<meta name="description" content="Meus pets {data.pet?.name}" />
 </svelte:head>
 
-<body class="h-full {data.pet?.sex === 'f' ? 'bg-pink-100' : 'bg-blue-100'}"> 
-	<header class="p-4 flex flex-col items-center justify-center">
+<main class="h-full w-full mb-8"> 
+	<header class="mt-8 p-4 flex flex-col items-center justify-center">
 		<img
 			class="w-32 h-32 rounded-full border-4 border-white shadow-md"
 			src={data.pet?.pictureUrl}
@@ -23,7 +23,7 @@
 			você será redirecionado para conversar com meu mestre... Miauu miauuu
 		</span>
 	</header>
-	<section>
+	<section class="mb-8">
 		<div class="p-2 m-8 rounded-lg {data.pet?.sex === 'f' ? 'bg-pink-300' : 'bg-blue-300'}">
 			<span class="font-bold">raça:</span>
 			<span class="font-semibold">{data.pet?.race}</span>
@@ -61,10 +61,4 @@
 			<a class="font-semibold" href="http://wa.me/{data.pet?.contact}">{data.pet?.contactString}</a>
 		</div>
 	</section>
-</body>
-
-<style lang="postcss">
-	:global(html) {
-		color: theme(colors.gray.800);
-	}
-</style>
+</main>
